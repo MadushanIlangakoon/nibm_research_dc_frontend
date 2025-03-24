@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  background-color: #f3f4f6;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #4caf50; /* Green bar color */
+  transition: width 0.1s linear; /* Smooth transition */
+}
+
+/* Custom CSS for placeholder option (disabled) */
+select.select-stream option:disabled {
+  color: #8d929a; /* Tailwind's text-red-400 for the placeholder */
+}
+
+/* Ensure the other options remain with default black text */
+select.select-stream option {
+  color: #000000; /* Black color for all other options */
+}
+
+/* Apply red color when placeholder is selected and value is invalid (shows placeholder) */
+select.select-stream:invalid {
+  color: #5e6063; /* Tailwind's text-red-400 for invalid selection (placeholder) */
+}
+
+/* Apply red color when placeholder is selected and value is invalid (shows placeholder) */
+input.custominput::placeholder {
+  color: #5e6063; /* Tailwind's text-red-400 for invalid selection (placeholder) */
+}
+
+/* To make sure the text remains red on the select field (placeholder selected) */
+select.select-stream:invalid option:checked {
+  color: #5e6063; /* Apply red to the selected placeholder */
+}
+
+@keyframes shrinkFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-shrink-fade {
+  animation: shrinkFade 1s ease-in-out;
+}
+
+.animate-shrink-fade p {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
